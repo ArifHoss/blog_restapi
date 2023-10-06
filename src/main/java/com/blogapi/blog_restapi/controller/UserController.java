@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 @Slf4j
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://127.0.0.1:5173")
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
@@ -76,6 +76,7 @@ public class UserController {
     }
 
     @PostMapping("/auth")
+    @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<?> getGWTToken(@RequestBody AuthRequest authRequest) {
 
         log.debug("In auth controller");
