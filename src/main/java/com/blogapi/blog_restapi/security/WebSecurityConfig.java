@@ -49,7 +49,7 @@ public class WebSecurityConfig {
         return http.cors().and().sessionManagement().disable()
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/users/auth", "/users/create").permitAll()
+                .requestMatchers("/users/auth", "/users/create","/posts").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
